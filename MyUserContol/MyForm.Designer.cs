@@ -1,6 +1,6 @@
 ﻿namespace MyUserContol
 {
-    partial class Form1
+    partial class MyForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnOk = new Button();
             btnShowDialog = new Button();
             pageSetupDialog1 = new PageSetupDialog();
             txtPassword = new TextBox();
-            passwordTextBox1 = new PasswordTextBox();
+            passwordTextBox = new PasswordTextBox();
+            myComponent1 = new MyComponent(components);
+            timeLabel = new Label();
             SuspendLayout();
             // 
             // btnOk
@@ -60,26 +63,36 @@
             txtPassword.Size = new Size(195, 23);
             txtPassword.TabIndex = 2;
             // 
-            // passwordTextBox1
+            // passwordTextBox
             // 
-            passwordTextBox1.AutoSize = true;
-            passwordTextBox1.LabelText = "Пароль";
-            passwordTextBox1.Location = new Point(12, 12);
-            passwordTextBox1.Name = "passwordTextBox1";
-            passwordTextBox1.Password = "";
-            passwordTextBox1.Size = new Size(171, 109);
-            passwordTextBox1.TabIndex = 3;
+            passwordTextBox.AutoSize = true;
+            passwordTextBox.LabelText = "Пароль";
+            passwordTextBox.Location = new Point(12, 12);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Password = "";
+            passwordTextBox.Size = new Size(171, 109);
+            passwordTextBox.TabIndex = 3;
             // 
-            // Form1
+            // timeLabel
+            // 
+            timeLabel.AutoSize = true;
+            timeLabel.Location = new Point(750, 426);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new Size(31, 15);
+            timeLabel.TabIndex = 4;
+            timeLabel.Text = "Date";
+            // 
+            // MyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(passwordTextBox1);
+            Controls.Add(timeLabel);
+            Controls.Add(passwordTextBox);
             Controls.Add(txtPassword);
             Controls.Add(btnOk);
             Controls.Add(btnShowDialog);
-            Name = "Form1";
+            Name = "MyForm";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -87,10 +100,12 @@
 
         #endregion
 
-        private PasswordTextBox passwordTextBox1;
+        private PasswordTextBox passwordTextBox;
         private Button btnOk;
         private Button btnShowDialog;
         private PageSetupDialog pageSetupDialog1;
         private TextBox txtPassword;
+        private MyComponent myComponent1;
+        public Label timeLabel;
     }
 }

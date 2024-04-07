@@ -3,12 +3,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MyUserContol
 {
-    public partial class Form1 : Form
+    public partial class MyForm : Form
     {
+        MyComponent mComponent;
 
-        public Form1()
+        public MyForm()
         {
             InitializeComponent();
+
+            mComponent = new MyComponent();
+            mComponent.AttachLabel(timeLabel);
         }
 
         public string Password
@@ -19,13 +23,13 @@ namespace MyUserContol
 
         private void BtnShowDialog_Click(object sender, EventArgs e)
         {
-            Form1 myForm = new Form1();
+            MyForm myForm = new MyForm();
             DialogResult result = myForm.ShowDialog();
             MessageBox.Show("Результат диалога: " + result.ToString());
             if (result == DialogResult.OK)
             {
                 string password = myForm.Password;
-                passwordTextBox1.Password = password;
+                passwordTextBox.Password = password;
             }
         }
 
